@@ -26,6 +26,12 @@ Before you start, it's essential to generate a Deepgram API key to use in this p
 
 Having installed the [Deepgram CLI](https://github.com/deepgram-devs/deepgram-cli), run `deepgram generate blank-template-project` to clone and set up [deepgram-templates/blank-template-project](https://github.com/deepgram-templates/blank-template-project) on your machine.
 
+### Glitch Remix
+
+> Requires .env file. Please describe steps here to edit the blank .env file after it has been remixed. **Do not prepopulate** the .env file that might be overwritten by any CLI setup scripts. Anything prepopulated should be placed in the sample .env file for the CLI, and the .env file for Glitch.
+
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/deepgram-templates/blank-template-project)
+
 ### StackBlitz
 
 > Please use a .stackblitzrc file to define a startCommand: https://developer.stackblitz.com/guides/integration/open-from-github#launching-a-script-on-project-load
