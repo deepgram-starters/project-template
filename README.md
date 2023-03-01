@@ -1,14 +1,14 @@
-# Deepgram **Language/Framework** Templates
+# Deepgram [Language] Demos
 
-Please check out the demos contained in this repository, for examples of how to build Deepgram into your **Language/Framework** applications.
+Please check out the demos contained in this repository, for examples of how to build Deepgram into your [Language] applications.
 
-- [Web app](./Template-01/README.md)
-- [Websockets](./Template-01/README.md)
-- [Command-line script](./Template-01/README.md)
+- [Web App](./Demo-01/README.md)
+- [Websockets](./Demo-01/README.md)
+- [Command-line](./Demo-01/README.md)
 
 ## What is Deepgram?
 
-Deepgram is an AI speech platform which specialises in (NLU) Natural Language Understanding features and Transcription. It can help get the following from your audio.
+Deepgram is an AI speech platform which specializes in (NLU) Natural Language Understanding features and Transcription. It can help get the following from your audio.
 
 - [Speaker diarization](https://deepgram.com/product/speech-understanding/)
 - [Language detection](https://deepgram.com/product/speech-understanding/)
