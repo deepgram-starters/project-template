@@ -1,11 +1,11 @@
 <!--
 Edit Framework and/or Language into the title for e.g. 
-- Deepgram React Web App Demo
-- Deepgram PHP Websockets Demo
-- Deepgram Node Command-line Demo
+- Deepgram React Web App Starter
+- Deepgram PHP Websockets Starter
+- Deepgram Node Command-line Starter
 -->
 
-# Deepgram [Language] [Type] Demo
+# Deepgram [Language] [Type] Starter
 
 <!-- Write an intro for this project -->
 
@@ -23,7 +23,7 @@ Before you start, it's essential to generate a Deepgram API key to use in this p
 
 ### Manual
 
-Follow these steps to get started with this demo.
+Follow these steps to get started with this starter application.
 
 <!-- Edit as appropriate -->
 
@@ -39,7 +39,7 @@ Having installed the [Deepgram CLI](https://github.com/deepgram-devs/deepgram-cl
 
 ### Glitch Remix
 
-Click this button to launch this demo on Glitch.
+Click this button to launch this starter application on Glitch.
 
 <!-- Requires .env file. Please describe steps here to edit the blank .env file after it has been remixed. **Do not prepopulate** the .env file that might be overwritten by any CLI setup scripts. Anything prepopulated should be placed in the sample .env file for the CLI, and the .env file for Glitch. -->
 
@@ -47,7 +47,7 @@ Click this button to launch this demo on Glitch.
 
 ### StackBlitz
 
-Click this button to launch this demo on StackBlitz.
+Click this button to launch this starter application on StackBlitz.
 
 <!-- Please use a .stackblitzrc file to define a startCommand: https://developer.stackblitz.com/guides/integration/open-from-github#launching-a-script-on-project-load -->
 
@@ -55,7 +55,7 @@ Click this button to launch this demo on StackBlitz.
 
 ### Heroku
 
-Click this button to launch this demo on Heroku.
+Click this button to launch this starter application on Heroku.
 
 <!-- Please use an app.json file to define how Heroku should bootstrap your application: https://devcenter.heroku.com/articles/app-json-schema -->
 
@@ -63,7 +63,7 @@ Click this button to launch this demo on Heroku.
 
 ### Netlify
 
-Click this button to launch this demo on Netlify.
+Click this button to launch this starter application on Netlify.
 
 <!-- Please use a netlify.toml file to define how Netlify should bootstrap your application: https://docs.netlify.com/site-deploys/create-deploys/#template-configuration -->
 
@@ -72,5 +72,5 @@ Click this button to launch this demo on Netlify.
 ## Related Content
 
 - [Any Deepgram content or docs]
-- [related to this demo app]
+- [related to this starter application]
 - [In a nice long list]
