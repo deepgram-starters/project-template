@@ -1,10 +1,10 @@
-# Deepgram [Language] Demos
+# Deepgram [Language] Starters
 
-Please check out the demos contained in this repository, for examples of how to build Deepgram into your [Language] applications.
+Please check out the starters contained in this repository, for examples of how to build Deepgram into your [Language] applications.
 
-- [Web App](./Demo-01/README.md)
-- [Websockets](./Demo-01/README.md)
-- [Command-line](./Demo-01/README.md)
+- [Web App](./Starter-01/README.md)
+- [Websockets](./Starter-01/README.md)
+- [Command-line](./Starter-01/README.md)
 
 ## What is Deepgram?
 
@@ -22,7 +22,7 @@ Deepgram is an AI speech platform which specializes in (NLU) Natural Language Un
 
 ## Create a Free Deepgram Account
 
-Before you start, it's essential to generate a Deepgram API key to use in our demo applications. [Sign-up now for Deepgram](https://console.deepgram.com/signup).
+Before you start, it's essential to generate a Deepgram API key to use in our starter applications. [Sign-up now for Deepgram](https://console.deepgram.com/signup).
 
 ## Issue Reporting
 
