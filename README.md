@@ -1,10 +1,61 @@
-# Deepgram [Language] Starters
+> Copy the entire contents of https://github.com/deepgram-starters/deepgram-starters-ui to the `./static/` folder.
 
-Please check out the starters contained in this repository, for examples of how to build Deepgram into your [Language] applications.
+> The name of the project and repo, is less important than the correct configuration of the `deepgram.toml` file, if you wish for it to be included in future onboarding workflows.
 
-- [Web App](./Starter-01/README.md)
-- [Websockets](./Starter-01/README.md)
-- [Command-line](./Starter-01/README.md)
+# [Usecase] [Language] Starter
+
+> Write an intro for this project
+
+Nifty little into, maybe a screenshot.
+
+## Sign-up to Deepgram
+
+> Please leave this section unchanged, unless providing a UTM on the URL.
+
+Before you start, it's essential to generate a Deepgram API key to use in this project. [Sign-up now for Deepgram](https://console.deepgram.com/signup).
+
+## Quickstart
+
+> Detail the manual steps to get started.
+
+e.g.
+
+### Manual
+
+Follow these steps to get started with this starter application.
+
+#### Clone the repository
+
+Go to GitHub and [clone the repository](https://github.com/deepgram-starters/prerecorded-node-starter).
+
+#### Install dependencies
+
+Install the project dependencies.
+
+```bash
+npm install
+```
+
+#### Edit the config file
+
+> Config file can be any appropriate file for the framework/language. For e.g.
+> Node is using a config.json file, while Python is only use .env files
+
+Copy the code from `sample.env` and create a new file called `.env`. Paste in the code and enter your API key you generated in the [Deepgram console](https://console.deepgram.com/).
+
+```json
+DEEPGRAM_API_KEY=%api_key%
+```
+
+#### Run the application
+
+> to support the UI, it must always run on port 8080
+
+The `dev` script will run a web and API server concurrently. Once running, you can [access the application in your browser](http://localhost:8080/).
+
+```bash
+npm start
+```
 
 ## What is Deepgram?
 
@@ -26,7 +77,7 @@ Before you start, it's essential to generate a Deepgram API key to use in our st
 
 ## Issue Reporting
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./.github/SECURITY.md) details the procedure for contacting Deepgram.
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./SECURITY.md) details the procedure for contacting Deepgram.
 
 ## Author
 
