@@ -88,7 +88,3 @@ We love to hear from you so if you have questions, comments or find a bug in the
 ## License
 
 This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for more info.
-
-## Security 
-
-Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./SECURITY.md) details the procedure for contacting Deepgram.
