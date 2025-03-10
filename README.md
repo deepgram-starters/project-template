@@ -1,18 +1,28 @@
-> Copy the entire contents of https://github.com/deepgram-starters/deepgram-starters-ui to the `./static/` folder.
+> INSTRUCTIONS
 
-> The name of the project and repo, is less important than the correct configuration of the `deepgram.toml` file, if you wish for it to be included in future onboarding workflows.
+> 1. Copy the entire contents of https://github.com/deepgram-starters/deepgram-starters-ui to the `./static/` folder.
 
-# [Usecase] [Language] Starter
+> 2. The configuration of the `deepgram.toml` file, is required so we can include the starter in future onboarding workflows.
 
-> Write an intro for this project
+> 3. Consistent naming of the project repo is important. Please don't deviate from our standards. Example repo name: [language] [use case] 
 
-Nifty little into, maybe a screenshot.
+> 4. Use the readme template below, don't deviate from it.
+---
+
+# [Language] [Usecase] Starter
+
+> Write a brief intro for this project.
+
+## What is Deepgram?
+> Please leave this section unchanged.
+
+[Deepgram’s](https://deepgram.com/) voice AI platform provides APIs for speech-to-text, text-to-speech, and full speech-to-speech voice agents. Over 200,000+ developers use Deepgram to build voice AI products and features.
 
 ## Sign-up to Deepgram
 
 > Please leave this section unchanged, unless providing a UTM on the URL.
 
-Before you start, it's essential to generate a Deepgram API key to use in this project. [Sign-up now for Deepgram](https://console.deepgram.com/signup).
+Before you start, it's essential to generate a Deepgram API key to use in this project. [Sign-up now for Deepgram and create an API key](https://console.deepgram.com/signup?jump=keys).
 
 ## Quickstart
 
@@ -49,7 +59,7 @@ DEEPGRAM_API_KEY=%api_key%
 
 #### Run the application
 
-> to support the UI, it must always run on port 8080
+> If your starter has a UI, it must always run on port 8080
 
 The `dev` script will run a web and API server concurrently. Once running, you can [access the application in your browser](http://localhost:8080/).
 
@@ -57,27 +67,19 @@ The `dev` script will run a web and API server concurrently. Once running, you c
 npm start
 ```
 
-## What is Deepgram?
-
-Deepgram is an AI speech platform which specializes in (NLU) Natural Language Understanding features and Transcription. It can help get the following from your audio.
-
-- [Speaker diarization](https://deepgram.com/product/speech-understanding/)
-- [Language detection](https://deepgram.com/product/speech-understanding/)
-- [Summarization](https://deepgram.com/product/speech-understanding/)
-- [Topic detection](https://deepgram.com/product/speech-understanding/)
-- [Language translation](https://deepgram.com/product/speech-understanding/)
-- [Sentiment analysis](https://deepgram.com/product/speech-understanding/)
-- [Entity detection](https://deepgram.com/product/speech-understanding/)
-- [Transcription](https://deepgram.com/product/transcription/)
-- [Redaction](https://deepgram.com/product/transcription/)
-
-## Create a Free Deepgram Account
-
-Before you start, it's essential to generate a Deepgram API key to use in our starter applications. [Sign-up now for Deepgram](https://console.deepgram.com/signup).
-
 ## Issue Reporting
 
 If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./SECURITY.md) details the procedure for contacting Deepgram.
+
+## Getting Help
+
+We love to hear from you so if you have questions, comments or find a bug in the project, let us know! You can either:
+
+> be sure to set the repo-name in the issue URL.
+
+- [Open an issue in this repository](https://github.com/deepgram-starters/{repo-name]/issues/new)
+- [Join the Deepgram Github Discussions Community](https://github.com/orgs/deepgram/discussions)
+- [Join the Deepgram Discord Community](https://discord.gg/xWRaCDBtW4)
 
 ## Author
 
