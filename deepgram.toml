@@ -1,8 +1,8 @@
 [meta]
-  title = "<usecase> <language/framework> Starter" # update with usecase and framework
-  description = "Basic demo for using Deepgram to <do a thing> in <language/framework>" # update with usecase and framework
+  title = "<language/framework> <usecase> Starter" # update with usecase and framework
+  description = "Get started using Deepgram's <product> with this <language/framework> demo app" # update with usecase and framework
   author = "Deepgram DX Team <devrel@deepgram.com> (https://developers.deepgram.com)" # update for author details
-  useCase = "Prerecorded" # usecase
+  useCase = "Prerecorded" # usecase 
   language = "Python" # base language
   framework = "Flask" # framework if not native
 
