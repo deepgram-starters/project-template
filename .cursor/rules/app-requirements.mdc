@@ -1,6 +1,6 @@
 ---
 description: Starter App Requirements
-globs: index.ts, src/*.ts
+globs: index.ts, src/
 alwaysApply: false
 ---
 # {Language / Framework} Starter App Requirements
