@@ -1,9 +1,18 @@
 ---
 description: Starter App Requirements
 globs: index.ts, src/
-alwaysApply: false
 ---
+
 # {Language / Framework} Starter App Requirements
+
+> This section can be removed: 
+
+> 1. To Get started check out the Docs on Using Cursor Rules: 
+> https://learn-cursor.com/en/blog/posts/cursor-rules-guide
+> https://learn-cursor.com/en/blog/posts/cursor-rules-advanced
+> https://forum.cursor.com/t/using-the-project-rules-in-0-45-2/44447/3
+
+> 2. Set your file patterns to match the application files in this project example: globs: index.ts, src/*.ts, etc
 
 ## Core Requirements
 - SHOULD live in a single file with minimal dependencies, i.e. `index.ts`
