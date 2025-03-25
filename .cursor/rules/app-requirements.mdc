@@ -1,6 +1,7 @@
 ---
 description: Starter App Requirements
 globs: index.ts, src/
+alwaysApply: false
 ---
 
 # {Language / Framework} Starter App Requirements
@@ -27,15 +28,28 @@ globs: index.ts, src/
 
 ## App Requirements:
 - SHOULD be able to use the Deepgram {Product} API
-- MUST exit gracefully without any agent API errors
+- MUST exit gracefully without any API errors
+- MUST Runs in terminal as a CLI to connect to the API, and follows a predefined script
+- MUST Runs with --serve
 
 > Add additional App requirements here
 
 ## CLI Requirements:
+- MUST Connect to the API
+- MUST Start to run through a set script of interactions
+- MUST Listen for the API output and prints it in the terminal
+- MUST Listen for the API response message and prints it in the terminal
+- MUST Listen for the API response binary message, saves it to and output file and displays the path in the terminal
+- MUST Gracefully closes the connection
 
 > Add additional App requirements here
 
 ## API Requirements:
+
+- MUST have a WebSocket server
+- MUST set a WebSocket server on ws://localhost:3000
+- MUST set an Upstream agent connection
+- MUST Connect to the API
 
 > Add additional App requirements here
 
