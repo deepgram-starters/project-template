@@ -7,6 +7,8 @@
 > 3. Consistent naming of the project repo is important. Please don't deviate from our standards. Example repo name: [language] [use case] 
 
 > 4. Use the readme template below, don't deviate from it.
+
+> 5. Use the [cursor rules](./.cursor/rules) with [Cursor](https://www.cursor.com/) to help build your starter more quickly!
 ---
 
 # [Language] [Usecase] Starter
