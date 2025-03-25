@@ -1,6 +1,6 @@
 > INSTRUCTIONS
 
-> 1. Copy the entire contents of https://github.com/deepgram-starters/deepgram-starters-ui to the `./static/` folder.
+> 1. If your app requires an UI: Copy the entire contents of https://github.com/deepgram-starters/deepgram-starters-ui to the `./static/` folder.
 
 > 2. The configuration of the `deepgram.toml` file, is required so we can include the starter in future onboarding workflows.
 
