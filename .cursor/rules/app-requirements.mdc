@@ -1,5 +1,5 @@
 ---
-description: Node Starter App Requirements
+description: Starter App Requirements
 globs: index.ts, src/*.ts
 alwaysApply: false
 ---
