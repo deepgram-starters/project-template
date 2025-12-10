@@ -5,181 +5,100 @@ alwaysApply: false
 ---
 # Repository Structure Requirements
 
-## Root Level - Required Files
+## Expected Structure
 
-### Documentation
-- MUST have `README.md` - Main project documentation (use template format)
-- MUST have `CONTRIBUTING.md` - Contribution guidelines
-- MUST have `SECURITY.md` - Security policy and procedures
-- MUST have `CODE_OF_CONDUCT.md` - Code of conduct
-- MUST have `LICENSE` - MIT license file
-
-### Configuration
-- MUST have `deepgram.toml` - Deepgram CLI configuration
-- MUST have `sample.env` - Environment variable template
-- MUST have `.gitignore` - Git ignore rules
-- MUST have `.npmrc` - pnpm security configuration
-- MUST have `.snyk` - Snyk security policy file
-
-### Application Files
-- MUST have a main app file: `server.js`, `index.ts`, `index.js`, or `app.js`
-- MUST have `package.json` with:
-  - `"packageManager": "pnpm@10.0.0"`
-  - `"engines": { "node": ">=24.0.0", "pnpm": ">=10.0.0" }`
-  - All dependencies pinned to exact versions (no `^` or `~`)
-  - Helper scripts: `install:all`, `install:frontend`, `security-check`, `security-check:all`
-  - `browserslist` configuration
-- MUST have `pnpm-lock.yaml` - pnpm lockfile
-
-### Optional Configuration
-- COULD have `Dockerfile` - For containerization
-- COULD have `nodemon.json` - Nodemon configuration
-- COULD have `.dockerignore` - Docker ignore rules
-
-## Frontend Directory (if applicable)
-
-If project has a web frontend, MUST have `frontend/` directory with:
-
-### Required Frontend Files
-- `frontend/package.json` - MUST include all fields:
-  - `name`: `@deepgram/[project-name]-html`
-  - `version`: `1.0.0`
-  - `private`: `true`
-  - `description`: "[Project] HTML frontend with Deepgram design system styles"
-  - `main`: `index.html`
-  - `type`: `module`
-  - `scripts`: `dev`, `build`, `preview`
-  - `keywords`: Array with relevant keywords
-  - `author`: "Deepgram Starter UIs Team"
-  - `license`: "MIT"
-  - `repository`: With `directory: "frontend"`
-  - `engines`: `{ "node": ">=14.0.0" }`
-  - `browserslist`: Standard configuration
-  - `dependencies`: `{ "@deepgram/styles": "latest" }`
-  - `devDependencies`: `{ "vite": "^7.2.2" }`
-
-- `frontend/vite.config.js` - Vite configuration with:
-  - Server port configuration
-  - `open: false` to prevent auto-opening browser
-  - Proxy configuration for backend API
-
-- `frontend/index.html` - Main HTML file
-- `frontend/app.js` - Main JavaScript application file
-- `frontend/pnpm-lock.yaml` - Frontend lockfile
-
-### Frontend Directory Structure
-```
-frontend/
-├── package.json          (MUST - complete format)
-├── vite.config.js        (MUST - with proxy config)
-├── index.html            (MUST - main HTML)
-├── app.js                (MUST - main JS)
-├── pnpm-lock.yaml        (MUST - lockfile)
-├── node_modules/         (local only, in .gitignore)
-└── dist/                 (build output, in .gitignore)
-```
-
-## Files That MUST NOT Exist
-
-- `package-lock.json` - npm lockfile (pnpm project)
-- `yarn.lock` - Yarn lockfile (pnpm project)
-- `npm-shrinkwrap.json` - npm lockfile (pnpm project)
-- `config.js` - Use inline CONFIG object in server.js instead
-- Old test files or temporary scripts
-
-## Directory Structure Example
-
-### Minimal Project (No Frontend)
-```
-project-name/
-├── .gitignore
-├── .npmrc
-├── .snyk
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── SECURITY.md
-├── deepgram.toml
-├── package.json
-├── pnpm-lock.yaml
-├── sample.env
-├── .env (local only, in .gitignore)
-├── node_modules/ (local only, in .gitignore)
-└── server.js (or index.ts/app.js)
-```
-
-### Full Project (With Frontend)
-```
-project-name/
-├── .gitignore
-├── .npmrc
-├── .snyk
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── SECURITY.md
-├── deepgram.toml
-├── package.json
-├── pnpm-lock.yaml
-├── sample.env
-├── .env (local only, in .gitignore)
-├── node_modules/ (local only, in .gitignore)
-├── server.js
-└── frontend/
-    ├── package.json
-    ├── vite.config.js
-    ├── index.html
-    ├── app.js
-    ├── pnpm-lock.yaml
-    ├── node_modules/ (local only)
-    └── dist/ (build output)
-```
-
-## Configuration File Requirements
-
-### .npmrc
-MUST contain:
-```
-node-linker=pnpm
-ignore-scripts=true
-enable-pre-post-scripts=false
-minimum-release-age=14400
-verify-store-integrity=true
-trust-policy=strict
-strict-peer-dependencies=true
-symlink=true
-frozen-lockfile=false
-```
-
-### .snyk
-MUST contain (block-style):
-```yaml
-version: v1.25.0
-ignore:
+**Every starter app MUST follow this structure:**
 
 ```
+[project-name]/
+├── [docs]           → README.md, CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md, LICENSE
+├── [config]         → deepgram.toml, sample.env, .gitignore, .snyk
+├── [dependencies]   → Language-specific (see below)
+├── [main-app]       → Language-specific entry point
+└── frontend/        → (Optional) Web UI
+```
 
-### .gitignore
-MUST ignore:
-- `node_modules/`
-- `frontend/node_modules/`
-- `.env` and `.env.*` (except `.env.example`)
-- `frontend/dist/`
-- `*.log`
-- Editor directories (`.vscode/`, `.idea/`)
-- OS files (`.DS_Store`, `Thumbs.db`)
+## Language-Specific Files
 
-## Validation Checklist
+### Node.js
+- **Dependencies:** `package.json`, `pnpm-lock.yaml`, `.npmrc`
+- **Main app:** `server.js`, `index.js`, or `app.js`
+- **Package manager:** pnpm (≥10.0.0) ONLY - NOT npm or yarn
+- **Key rules:** All dependencies pinned to exact versions (no `^` or `~`)
 
-- [ ] All required documentation files present
-- [ ] `.npmrc` and `.snyk` configured correctly
-- [ ] `package.json` has packageManager and engines
-- [ ] All dependencies pinned to exact versions
-- [ ] Frontend `package.json` has complete format (if applicable)
-- [ ] No npm/yarn lockfiles present
-- [ ] `pnpm-lock.yaml` exists (root and frontend)
-- [ ] No `config.js` file (use inline CONFIG object)
-- [ ] `.gitignore` properly configured
-- [ ] `deepgram.toml` uses `pnpm run install:all`
+### Python
+- **Dependencies:** `requirements.txt`, `pyproject.toml`, or `poetry.lock`
+- **Main app:** `app.py`, `main.py`, or `server.py`
+- **Package manager:** pip, poetry, or uv
+- **Key rules:** Pin all dependencies to exact versions
+- **Framework considerations:**
+  - Flask: Main app typically `app.py` or `run.py`
+  - Django: Main app `manage.py` with `settings.py` in project directory
+
+### Go
+- **Dependencies:** `go.mod`, `go.sum`
+- **Main app:** `main.go` or `server.go`
+- **Package manager:** go modules
+- **Key rules:** Use vendoring if appropriate
+
+### .NET
+- **Dependencies:** `*.csproj`, `*.sln`, `packages.lock.json`
+- **Main app:** `Program.cs` or `Startup.cs`
+- **Package manager:** NuGet
+- **Key rules:** Use lock file for dependency pinning
+
+### Rust
+- **Dependencies:** `Cargo.toml`, `Cargo.lock`
+- **Main app:** `main.rs` or `lib.rs` in `src/`
+- **Package manager:** cargo
+- **Key rules:** Commit Cargo.lock for applications
+
+### Java
+- **Dependencies:** `pom.xml` (Maven) or `build.gradle` (Gradle)
+- **Main app:** `Main.java` or `Application.java` in `src/main/java/`
+- **Package manager:** Maven or Gradle
+- **Key rules:** Commit lockfiles (`pom.xml.lock` or `gradle.lockfile`)
+
+### C++
+- **Dependencies:** `CMakeLists.txt`, `conanfile.txt`, or `vcpkg.json`
+- **Main app:** `main.cpp` or `main.cc` in `src/`
+- **Build system:** CMake, Meson, or Make
+- **Key rules:** Document build dependencies and toolchain requirements
+
+### Ruby
+- **Dependencies:** `Gemfile`, `Gemfile.lock`
+- **Main app:** `app.rb`, `server.rb`, or `config.ru` (Rack apps)
+- **Package manager:** Bundler
+- **Key rules:** Always commit `Gemfile.lock`
+
+### PHP
+- **Dependencies:** `composer.json`, `composer.lock`
+- **Main app:** `index.php` or `public/index.php`
+- **Package manager:** Composer
+- **Key rules:** Commit `composer.lock` for version consistency
+
+## Universal Requirements
+
+**MUST have (all languages):**
+- ✅ Documentation: `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `LICENSE`
+- ✅ Configuration: `deepgram.toml`, `sample.env`, `.gitignore`, `.snyk`
+- ✅ Dependencies pinned to exact versions
+- ✅ Language-specific dependency lockfile
+
+**MUST NOT have:**
+- ❌ Multiple package manager lockfiles (e.g., both `pnpm-lock.yaml` and `package-lock.json`)
+- ❌ Separate `config.js` files (use inline CONFIG object or environment variables)
+- ❌ Temporary files or old test scripts
+- ❌ Committed `.env` files (only `sample.env` should be tracked)
+
+## File-Specific Requirements
+
+For detailed requirements on individual files, see:
+- `@project-template/.cursor/rules/readme-requirements.mdc`
+- `@project-template/.cursor/rules/contributing-requirements.mdc`
+- `@project-template/.cursor/rules/security-requirements.mdc`
+- `@project-template/.cursor/rules/code-of-conduct.mdc`
+- `@project-template/.cursor/rules/env-requirements.mdc`
+- `@project-template/.cursor/rules/gitignore-requirements.mdc`
+- `@project-template/.cursor/rules/deepgram-toml.mdc`
+- `@project-template/.cursor/rules/license-requirements.mdc`

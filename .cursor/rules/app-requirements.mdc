@@ -22,11 +22,6 @@ This document defines requirements for building Deepgram starter applications th
 - MUST NOT deviate from the API contract
 - MUST NOT use extra packages that aren't needed
 
-### Key Inputs Required
-- `<starter-name>` - The name of the starter project
-- `<analyze.spec.js>` - The conformance test spec from @starter-contracts
-- `<interface>` - The OpenAPI/AsyncAPI spec from @starter-contracts
-
 ## Step 2: Security Hardening
 
 ### JavaScript/TypeScript Projects
@@ -57,18 +52,6 @@ This document defines requirements for building Deepgram starter applications th
 - Create `.snyk` policy file with block-style empty `ignore:` (not `ignore: {}`)
 - Add `security-check` script to package.json
 - DO NOT add Snyk to GitHub Actions unless workflow already exists
-
-#### Documentation Requirements
-- Update `SECURITY.md` documenting:
-  - Package manager security settings
-  - Dependency pinning strategy
-  - Snyk integration
-  - Lockfile protection
-  - Local security check commands
-- Update `CONTRIBUTING.md` to:
-  - Emphasize pnpm requirement (npm/yarn will fail)
-  - Mention security scanning in review process
-- Update `README.md` to link to security documentation
 
 #### Lockfile
 - Regenerate `pnpm-lock.yaml` with pnpm 10

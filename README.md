@@ -8,7 +8,7 @@
 
 > 4. Use the README template below, don't deviate from it.
 
-> 5. Optional: Use the [cursor rules](./.cursor/rules) with [Cursor](https://www.cursor.com/) to help build your starter more quickly!
+> 5. Recommended: Use the [cursor rules](./.cursor/rules) with [Cursor](https://www.cursor.com/) to help build your starter more quickly!
 ---
 
 # [Project Name]

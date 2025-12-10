@@ -5,110 +5,40 @@ alwaysApply: false
 ---
 # Security Requirements
 
-Write the SECURITY.md contents using this template:
+When creating or updating SECURITY.md files for starter apps, use the template from:
 
-```markdown
-# Security Policy
+**Reference:** `@project-template/SECURITY.md`
 
-Deepgram's security policy can be found on our main website.
+This template includes:
+- Link to Deepgram's main security policy
+- Supply chain security measures (Node.js focused, but adaptable)
+- Package manager security configurations
+- Dependency pinning strategy
+- Snyk integration and local security checks
+- Lockfile protection practices
+- Security issue reporting procedures
 
-[Deepgram Security Policy](https://developers.deepgram.com/documentation/security/security-policy/)
+## Project-Specific Customizations
 
-## Supply Chain Security
-
-This project implements comprehensive supply chain security measures to protect against vulnerabilities in dependencies.
-
-### Package Manager Security
-
-**pnpm 10.0.0+ is required** - this project will not work with npm or yarn.
-
-Security configurations (`.npmrc`):
-- `ignore-scripts=true` - All lifecycle scripts are disabled to prevent malicious code execution
-- `enable-pre-post-scripts=false` - Pre/post install scripts are blocked
-- `minimum-release-age=14400` - Packages must be 10+ days old before installation (4-hour minimum in minutes)
-- `verify-store-integrity=true` - Package integrity hashes are verified
-- `trust-policy=strict` - Strict trust policies enforced
-- `strict-peer-dependencies=true` - Strict peer dependency resolution
-
-### Dependency Pinning Strategy
-
-All dependencies are pinned to exact versions (no `^` or `~` ranges) to ensure:
-- Reproducible builds across all environments
-- No unexpected updates that could introduce vulnerabilities
-- Full control over dependency updates
-
-Updates to dependencies should be:
-1. Tested thoroughly in development
-2. Scanned for security vulnerabilities
-3. Reviewed before merging to main
-
-### Snyk Integration
-
-This project uses [Snyk](https://snyk.io) for continuous security monitoring:
-
-**Local Security Checks:**
-```bash
-# Run security scan on root project
-pnpm run security-check
-
-# Run security scan on frontend
-cd frontend && pnpm run security-check
-
-# Scan all projects
-pnpm run security-check:all
-```
-
-### Lockfile Protection
-
-The `pnpm-lock.yaml` file is protected:
-- CI uses `--frozen-lockfile` flag to prevent modifications
-- Any lockfile changes must be committed explicitly
-- Ensures consistency between development and production
-
-### Reporting Security Issues
-
-If you discover a security vulnerability in this project:
-
-1. **Do NOT** open a public GitHub issue
-2. Email security concerns to: security@deepgram.com
-3. Include detailed information about the vulnerability
-4. Allow reasonable time for response before public disclosure
-
-We take security seriously and will respond promptly to legitimate security concerns.
-```
-
-## Additional Sections (Add if applicable)
+Adjust the following based on your project:
 
 ### For AWS/Cloud Projects
-Add a section after "Dependency Pinning Strategy":
+Add after "Dependency Pinning Strategy" section:
 
-```markdown
-### AWS Credentials Security
-
-This project requires AWS credentials for [service] integration:
-
-**Best Practices:**
-- ✅ NEVER commit `.env` file with real credentials
-- ✅ Use AWS IAM roles instead of access keys when possible
-- ✅ Rotate AWS access keys regularly
-- ✅ Use least-privilege IAM policies for [service] access
-- ✅ Store credentials in environment variables, not in code
-- ✅ Use AWS Secrets Manager for production deployments
+**AWS Credentials Security:**
+- Never commit `.env` with real credentials
+- Use IAM roles when possible
+- Rotate access keys regularly
+- Use least-privilege IAM policies
+- Store credentials in environment variables
+- Use AWS Secrets Manager for production
 
 **Required IAM Permissions:**
-- `[service]:InvokeEndpoint` - Minimum required for this application
-```
+- Document minimum required permissions for your service
 
 ### For Local SDK Dependencies
-Add to "Dependency Pinning Strategy" section:
-
-```markdown
-**Exception:** The `@deepgram/sdk` uses a local file reference to the [specific] SDK. This SDK is maintained separately and should be updated via its own repository.
-
-⚠️ **Local SDK Path Consideration:**
-- The SDK path in `package.json` is relative: `file:../../sdks/[sdk-name]`
-- This path assumes a specific directory structure (see README)
-- Different developers may need to adjust this path based on where they clone the SDK
-- When the SDK is published to npm, this will be replaced with a pinned version number
-- Document any path changes in your local `.env` or setup notes
-```
+Add to "Dependency Pinning Strategy" section if using local file references:
+- Explain the local SDK path configuration
+- Document directory structure requirements
+- Note that paths may need adjustment per developer
+- Indicate when SDK will be replaced with npm version
