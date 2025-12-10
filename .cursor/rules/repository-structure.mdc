@@ -80,16 +80,16 @@ alwaysApply: false
 ## Universal Requirements
 
 **MUST have (all languages):**
-- ✅ Documentation: `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `LICENSE`
-- ✅ Configuration: `deepgram.toml`, `sample.env`, `.gitignore`, `.snyk`
-- ✅ Dependencies pinned to exact versions
-- ✅ Language-specific dependency lockfile
+- Documentation: `README.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `LICENSE`
+- Configuration: `deepgram.toml`, `sample.env`, `.gitignore`, `.snyk`
+- Dependencies pinned to exact versions
+- Language-specific dependency lockfile
 
 **MUST NOT have:**
-- ❌ Multiple package manager lockfiles (e.g., both `pnpm-lock.yaml` and `package-lock.json`)
-- ❌ Separate `config.js` files (use inline CONFIG object or environment variables)
-- ❌ Temporary files or old test scripts
-- ❌ Committed `.env` files (only `sample.env` should be tracked)
+- Multiple package manager lockfiles (e.g., both `pnpm-lock.yaml` and `package-lock.json`)
+- Separate `config.js` files (use inline CONFIG object or environment variables)
+- Temporary files or old test scripts
+- Committed `.env` files (only `sample.env` should be tracked)
 
 ## File-Specific Requirements
 

@@ -74,12 +74,12 @@ Replace with language-appropriate commands:
 ## What NOT to Include
 
 Remove these from the template if they appear:
-- ❌ "What is Deepgram?" explanations
-- ❌ "Issue Reporting" section (covered in Getting Help)
-- ❌ Detailed architecture diagrams
-- ❌ Security implementation details (link only)
-- ❌ Author or credits sections
-- ❌ Verbose feature lists
+- "What is Deepgram?" explanations
+- "Issue Reporting" section (covered in Getting Help)
+- Detailed architecture diagrams
+- Security implementation details (link only)
+- Author or credits sections
+- Verbose feature lists
 
 ## Section Notes
 
