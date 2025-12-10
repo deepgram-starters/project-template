@@ -9,9 +9,12 @@ alwaysApply: false
 
 The `deepgram.toml` file configures project metadata and build steps for the Deepgram CLI. It enables automated setup and deployment of starter applications.
 
-## Required Fields
+## TOML  Config Sections
 
-### [meta] Section (REQUIRED)
+### [meta] Section
+
+Every deepgram.toml must have this section. Describes the project, doesn't affect build/runtime.
+
 [meta]
 title = "Project Title"                    # REQUIRED: Short, descriptive title
 description = "Brief description"          # REQUIRED: One-line description
@@ -21,7 +24,7 @@ language = "TypeScript"                    # REQUIRED: Primary language
 framework = "Node"                         # OPTIONAL: Framework/runtime (omit if none)
 sdk = "3.8.12"                            # OPTIONAL: Deepgram SDK version (omit if not used)**Valid `useCase` values:**
 
-## Use Cases
+**UseCases**
 - `STT` - Speech-to-Text / Transcription
 - `TTS` - Text-to-Speech / Audio AI
 - `Agent` - Voice Agent applications
@@ -29,7 +32,8 @@ sdk = "3.8.12"                            # OPTIONAL: Deepgram SDK version (omit
 - `Live-STT` - Live streaming transcription
 - `Live-TTS` - Live streaming text-to-speech
 
-## Installation and Build Steps
+### Installation and Build Steps
+
 Use when dependencies need installation before building.
 
 [pre-build]
@@ -50,8 +54,10 @@ Display instructions after build completes.
 [post-build]
 message = "Run `pnpm start` to get started."  # Instructions for user## Language-Specific Examples
 
+### Language Specific Examples
 
-### Node.js / TypeScript
+#### Node.js / TypeScript
+
 [meta]
 title = "Node Transcription Starter"
 description = "Get started using Deepgram's Transcription with this Node demo app"
@@ -72,7 +78,8 @@ output = ".env"
 [post-build]
 message = "Run `pnpm start` to get up and running."
 
-### Python (Flask/Django)
+#### Python (Flask/Django)
+
 [meta]
 title = "Python TTS Starter"
 description = "Get started with Deepgram's Text-to-Speech API in Python"
@@ -93,7 +100,8 @@ output = ".env"
 [post-build]
 message = "Run `python app.py` to start the server."
 
-### Go
+#### Go
+
 [meta]
 title = "Go Voice Agent Starter"
 description = "Build voice agents with Deepgram in Go"
@@ -114,7 +122,8 @@ message = "Build completed"
 sample = "sample.env"
 output = ".env"
 
-## Ruby
+#### Ruby
+
 [post-build]
 message = "Run `./agent` to start the voice agent."### Ruby
 [meta]
@@ -136,7 +145,8 @@ output = ".env"
 [post-build]
 message = "Run `ruby server.rb` to start the app."
 
-### Java
+#### Java
+
 [meta]
 title = "Java Text Intelligence"
 description = "Analyze text with Deepgram in Java"
@@ -160,7 +170,8 @@ output = ".env"
 [post-build]
 message = "Run `java -jar target/app.jar` to start."
 
-### Rust
+#### Rust
+
 [meta]
 title = "Rust Speech-to-Text"
 description = "Transcribe audio with Deepgram in Rust"
@@ -183,7 +194,8 @@ output = ".env"
 [post-build]
 message = "Run `cargo run --release` to start."
 
-### PHP
+#### PHP
+
 [meta]
 title = "PHP TTS Example"
 description = "Generate speech with Deepgram in PHP"
@@ -202,7 +214,8 @@ output = ".env"
 [post-build]
 message = "Run `php -S localhost:8000` to start the server."
 
-### .NET
+#### .NET
+
 [meta]
 title = ".NET Voice Agent"
 description = "Build voice agents with Deepgram in .NET"
