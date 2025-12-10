@@ -6,5 +6,4 @@ alwaysApply: false
 # Gitignore Requirements
 
 ## Specifications
-- SHOULD ignore all the usual files and folders including `node_modules`, `.env` and others
-- MUST ignore `.env`
+- SHOULD use https://github.com/github/gitignore for gitignore standards for all languages.

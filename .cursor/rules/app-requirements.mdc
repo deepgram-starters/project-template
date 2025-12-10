@@ -1,58 +1,92 @@
 ---
-description: Starter App Requirements
-globs: index.ts, src/
+description: Deepgram Starter App Requirements
+globs: server.js, index.ts, src/, frontend/
 alwaysApply: false
 ---
 
-# {Language / Framework} Starter App Requirements
+# Deepgram Starter App Requirements
 
-> This section can be removed: 
+## Overview
 
-> 1. To Get started check out the Docs on Using Cursor Rules: 
-> https://learn-cursor.com/en/blog/posts/cursor-rules-guide
-> https://learn-cursor.com/en/blog/posts/cursor-rules-advanced
-> https://forum.cursor.com/t/using-the-project-rules-in-0-45-2/44447/3
+This document defines requirements for building Deepgram starter applications that demonstrate API usage with proper security, UI components, and API contract compliance.
 
-> 2. Set your file patterns to match the application files in this project example: globs: index.ts, src/*.ts, etc
+## Step 1: API Contract Compliance & UI
 
-## Core Requirements
-- SHOULD live in a single file with minimal dependencies, i.e. `index.ts`
-- SHOULD use {specific languages or frameworks}
-- SHOULD use the latest version of the official SDK where provided
-- MUST falls back to manual integration using the API spec where there is no SDK
-- MUST run in a terminal
-- MUST be usable in command line with a single command
-- MUST be able to run it with `--serve` flag that will start it as a http server
-- MUST get API keys and other sensitive config from a `.env` file
-- MUST provide help code comments explaining the main sections of the app
+### Core Requirements
+- MUST implement the API contract defined in the interface spec (OpenAPI/AsyncAPI)
+- MUST use components from `@starter-uis` for frontend (DO NOT create custom components)
+- MUST use CSS from `@starter-uis` (DO NOT write custom CSS)
+- MUST use pnpm (not npm/yarn) for JS/TS projects
+- MUST update `deepgram.toml` with correct commands for `[pre-build]`, `[build]`, `[config]`, `[post-build]`
+- MUST rely on imports from starter-uis instead of copy/paste code
+- MUST NOT deviate from the API contract
+- MUST NOT use extra packages that aren't needed
 
-## App Requirements:
-- SHOULD be able to use the Deepgram {Product} API
-- MUST exit gracefully without any API errors
-- MUST Runs in terminal as a CLI to connect to the API, and follows a predefined script
-- MUST Runs with --serve
+### Key Inputs Required
+- `<starter-name>` - The name of the starter project
+- `<analyze.spec.js>` - The conformance test spec from @starter-contracts
+- `<interface>` - The OpenAPI/AsyncAPI spec from @starter-contracts
 
-> Add additional App requirements here
+## Step 2: Security Hardening
 
-## CLI Requirements:
-- MUST Connect to the API
-- MUST Start to run through a set script of interactions
-- MUST Listen for the API output and prints it in the terminal
-- MUST Listen for the API response message and prints it in the terminal
-- MUST Listen for the API response binary message, saves it to and output file and displays the path in the terminal
-- MUST Gracefully closes the connection
+### JavaScript/TypeScript Projects
 
-> Add additional App requirements here
+#### Package Manager Configuration
+- Set up pnpm 10.0.0 as the package manager
+- Create `.npmrc` with:
+  - `node-linker=pnpm` (force pnpm, breaks npm/yarn)
+  - `ignore-scripts=true` (disable all lifecycle scripts)
+  - `enable-pre-post-scripts=false` (disable pre/post install scripts)
+  - `minimum-release-age=14400` (require packages to be 10+ days old)
+  - `verify-store-integrity=true` (verify package integrity hashes)
+  - `trust-policy=strict` (enforce strict trust policies)
+  - `strict-peer-dependencies=true` (only verified registries)
 
-## API Requirements:
+#### package.json Requirements
+- Add `"packageManager": "pnpm@10.0.0"`
+- Add `engines` field requiring `pnpm >= 10.0.0` and `node >= 24.0.0`
+- Pin ALL dependencies to exact versions (no ranges like ^ or ~)
+- Add `pnpm.overrides` section only if needed for known vulnerabilities
+- Add helper scripts:
+  - `install:all` - Install root + frontend dependencies
+  - `install:frontend` - Install frontend only
+  - `security-check` - Run Snyk scan on root
+  - `security-check:all` - Run Snyk scan on root + frontend
 
-- MUST have a WebSocket server
-- MUST set a WebSocket server on ws://localhost:3000
-- MUST set an Upstream agent connection
-- MUST Connect to the API
+#### Snyk Security Integration
+- Create `.snyk` policy file with block-style empty `ignore:` (not `ignore: {}`)
+- Add `security-check` script to package.json
+- DO NOT add Snyk to GitHub Actions unless workflow already exists
 
-> Add additional App requirements here
+#### Documentation Requirements
+- Update `SECURITY.md` documenting:
+  - Package manager security settings
+  - Dependency pinning strategy
+  - Snyk integration
+  - Lockfile protection
+  - Local security check commands
+- Update `CONTRIBUTING.md` to:
+  - Emphasize pnpm requirement (npm/yarn will fail)
+  - Mention security scanning in review process
+- Update `README.md` to link to security documentation
 
-## Test Requirements
-- MUST have tests that validates the apps functionality is working
+#### Lockfile
+- Regenerate `pnpm-lock.yaml` with pnpm 10
+- Ensure CI uses `--frozen-lockfile` flag (if CI exists)
 
+### Non-JavaScript Projects
+
+#### Dependency Management
+- Pin ALL dependencies to exact versions (no version ranges)
+- Use lockfiles and commit them to version control
+- Configure package manager to verify integrity hashes
+- Set minimum release age if package manager supports it
+
+#### Snyk Security Integration
+- Create `.snyk` policy file with empty `ignore: {}`
+- Add security check command to build system (Makefile, etc.)
+- Use appropriate Snyk action for language:
+  - Python: `snyk/actions/python@master`
+  - Go: `snyk/actions/golang@master`
+  - Java/Maven: `snyk/actions/maven@master`
+  - Docker: `snyk/actions/docker@master`

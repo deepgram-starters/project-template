@@ -1,92 +1,96 @@
 > INSTRUCTIONS
 
-> 1. If your app requires an UI: Copy the entire contents of https://github.com/deepgram-starters/deepgram-starters-ui to the `./static/` folder.
+> 1. If your app requires an UI use https://github.com/deepgram/starter-uis
 
-> 2. The configuration of the `deepgram.toml` file, is required so we can include the starter in future onboarding workflows.
+> 2. The configuration of the `deepgram.toml` file and is needed for our Starter Ecosystem.
 
-> 3. Consistent naming of the project repo is important. Please don't deviate from our standards. Example repo name: [language] [use case] 
+> 3. Consistent naming of the project repo is important. Please don't deviate from our standards. Example repo name: [language] [use case]
 
-> 4. Use the readme template below, don't deviate from it.
+> 4. Use the README template below, don't deviate from it.
 
-> 5. Use the [cursor rules](./.cursor/rules) with [Cursor](https://www.cursor.com/) to help build your starter more quickly!
+> 5. Optional: Use the [cursor rules](./.cursor/rules) with [Cursor](https://www.cursor.com/) to help build your starter more quickly!
 ---
 
-# [Language] [Usecase] Starter
+# [Project Name]
 
-> Write a brief intro for this project.
+[One-line description with tech stack]
 
-## What is Deepgram?
-> Please leave this section unchanged.
+## Prerequisites
 
-[Deepgram’s](https://deepgram.com/) voice AI platform provides APIs for speech-to-text, text-to-speech, and full speech-to-speech voice agents. Over 200,000+ developers use Deepgram to build voice AI products and features.
+- [Deepgram API Key](https://console.deepgram.com/signup?jump=keys) (sign up for free)
+- Framwork and tooling needed
 
-## Sign-up to Deepgram
-
-> Please leave this section unchanged, unless providing a UTM on the URL.
-
-Before you start, it's essential to generate a Deepgram API key to use in this project. [Sign-up now for Deepgram and create an API key](https://console.deepgram.com/signup?jump=keys).
+**Note:** This project uses strict supply chain security measures. npm and yarn will NOT work. See [SECURITY.md](SECURITY.md) for details.
 
 ## Quickstart
 
-> Detail the manual steps to get started.
+1. **Clone the repository**
 
-e.g.
+Go to GitHub and [clone the repository](https://github.com/deepgram-starters/[PROJECT-NAME]).
 
-### Manual
-
-Follow these steps to get started with this starter application.
-
-#### Clone the repository
-
-Go to GitHub and [clone the repository](https://github.com/deepgram-starters/prerecorded-node-starter).
-
-#### Install dependencies
-
-Install the project dependencies.
+2. **Install dependencies**
 
 ```bash
-npm install
+# Option 1: Use the helper script (recommended)
+command here
+
+# Option 2: Manual two-step install
+commands here
 ```
 
-#### Edit the config file
+**Note:** Due to security settings (`ignore-scripts=true`), frontend dependencies must be installed separately. The `install:all` script handles both steps. See [SECURITY.md](SECURITY.md) for details.
 
-> Config file can be any appropriate file for the framework/language. For e.g.
-> Node is using a config.json file, while Python is only use .env files
+3. **Set your API key**
 
-Copy the code from `sample.env` and create a new file called `.env`. Paste in the code and enter your API key you generated in the [Deepgram console](https://console.deepgram.com/).
-
-```json
-DEEPGRAM_API_KEY=%api_key%
-```
-
-#### Run the application
-
-> If your starter has a UI, it must always run on port 8080
-
-The `dev` script will run a web and API server concurrently. Once running, you can [access the application in your browser](http://localhost:8080/).
+Create a `.env` file:
 
 ```bash
-npm start
+DEEPGRAM_API_KEY=your_api_key_here
+```
+4. **Run the app**
+
+**Development mode** (with hot reload):
+
+```bash
+command here
 ```
 
-## Issue Reporting
+**Production mode** (build and serve):
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./SECURITY.md) details the procedure for contacting Deepgram.
+```bash
+commands here
+```
+
+### 🌐 Open the App
+
+[http://localhost:3000](http://localhost:3000)
+
+## How It Works
+
+This application:
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+4. [Step 4]
 
 ## Getting Help
 
-We love to hear from you so if you have questions, comments or find a bug in the project, let us know! You can either:
-
-> be sure to set the repo-name in the issue URL.
-
-- [Open an issue in this repository](https://github.com/deepgram-starters/{repo-name]/issues/new)
+- [Open an issue in this repository](https://github.com/deepgram-starters/[PROJECT-NAME]/issues/new)
 - [Join the Deepgram Github Discussions Community](https://github.com/orgs/deepgram/discussions)
 - [Join the Deepgram Discord Community](https://discord.gg/xWRaCDBtW4)
 
-## Author
+## Contributing
 
-[Deepgram](https://deepgram.com)
+See our [Contributing Guidelines](./CONTRIBUTING.md) to learn about contributing to this project.
+
+## Code of Conduct
+
+This project follows the [Deepgram Code of Conduct](./CODE_OF_CONDUCT.md).
+
+## Security
+
+For security policy and procedures, see our [Security Policy](./SECURITY.md).
 
 ## License
 
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for more info.
+MIT - See [LICENSE](./LICENSE)

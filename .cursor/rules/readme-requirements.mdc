@@ -6,11 +6,26 @@ alwaysApply: false
 # README.md Requirements
 
 ## Content Structure
-- MUST have a H1 title
-- MUST have a description
-- MUST have a prerequisite section
-- MUST have a section to create a `.env` file based on the contents of `sample.env`
-- MUST provide simple instructions for both uses of the starter app
-- MUST provide a short section on license, contributing, security, and code of conduct as separate sections, linking to their respective files in their own section
-- MUST have a link to the [Discord](mdc:node-voice-agent/https:/discord.gg/deepgram) to get help
-- MUST have instructions to raise an issue for any bugs/feature requests
+- must be the same format as the README.md file found in the starter project-template repo.
+
+# Title
+One-line description (concise, includes tech stack)
+## Sign-up to Deepgram (with link)
+## Prerequisites (bullet list: API key, Node/pnpm)
+## Quickstart (numbered: clone, install, config, run)
+### 🌐 Open the App (clear port instructions)
+## Production Build (optional)
+## How It Works (4-5 bullet points)
+## Getting Help (3 links: Issues, Discussions, Discord)
+## Contributing (one line + link)
+## Code of Conduct (one line + link)
+## Security (one line + link)
+## License (one line: "MIT - See LICENSE")
+
+DO NOT INCLUDE:
+- "What is Deepgram?" section
+- "Issue Reporting" section
+- Detailed architecture explanations
+- Security implementation details (link only)
+- Verbose descriptions
+- "Author" section
