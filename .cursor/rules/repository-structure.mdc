@@ -22,7 +22,8 @@ alwaysApply: false
 
 ### Node.js
 - **Dependencies:** `package.json`, `pnpm-lock.yaml`, `.npmrc`
-- **Main app:** `server.js`, `index.js`, or `app.js`
+- **Frontend app:** `frontend/index.html` → `frontend/main.js` (Vite entry point chain)
+- **Server app:** `server.js`
 - **Package manager:** pnpm (≥10.0.0) ONLY - NOT npm or yarn
 - **Key rules:** All dependencies pinned to exact versions (no `^` or `~`)
 
